@@ -1,0 +1,20 @@
+[
+    {
+        "id" : 1,
+        "title": "Projet fête des Lumières",
+        "description": "Application Java Swing permttant de calculer des trajets optimaux",
+        "link": "",
+        "context":"Le but de cette application était de pouvoir permettre à l'utilisateur d'entrer un fichier contenant les lieux à visités puis de lui donner la boucle la plus courte possible passanr par ces points. L'objectif principal étant de permettre aux personnes de se déplacer de manière plus fluide lors de la fête des Lumières",
+        "skills":"Développement Orienté Objet, Conception d'un modèle Vue Modèle, Java Swing, Conception d'interface utilisateur, Graphes et parcour de graphes, Algorithmes de recherche de plus court chemin"
+    },
+
+    {
+        "id" : 2,
+        "title": "Gesionnaire d'annuaire",
+        "description": "Application en C sans interface permettant la gestion d'un annuaire via un fichier",
+        "link": "",
+        "context": "Cette application a pour but premier de gérer un annuaire enregister dans un fichier .csv. La gestion de ce fichier a été codé en C et se fait uniquement depuis la console de sortie. Des fonctions de tri et de recherche ont été implémentées afin de fluidifier le déplacement dans celui-ci",
+        "skills":"Développement en C, Algorithme de tri et de recherche, structure et pointeurs "
+
+    }
+]
