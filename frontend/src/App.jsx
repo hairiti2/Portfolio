@@ -14,12 +14,12 @@ function App() {
   const [skills, setSkills] = useState([]);
 
   useEffect(() => {
-    fetch("/api/projects")
+    fetch("http://localhost:5000/api/projects")
       .then(res => res.json())
       .then(dataProj => setProjects(dataProj))
       .catch(err => console.log("Erreur:", err));
 
-    fetch("/api/skills")
+    fetch("http://localhost:5000/api/skills")
       .then(res => res.json())
       .then(dataSkill => setSkills(dataSkill))
       .catch(err=>console.log("Erreur", err));
