@@ -4,8 +4,6 @@ export default function ProjectDetails({ project }){
 
     return(
         <div className="Details">
-            <h1>{project.title}</h1>
-            <div className="projectDetail">
                 <div className="blockDetail">
                     <h3>Contexte</h3> 
                     {project.context}
@@ -18,7 +16,6 @@ export default function ProjectDetails({ project }){
                     
                 </div>
                 <div className="projectImg"></div>
-            </div>
         </div>
     ) ;
 }

@@ -56,7 +56,9 @@ function App() {
               <main className='container'>
                 <Header/>
                 <h1>Mes Compétences</h1>
-                {skills.map((s, key) => <SkillCard key={key} skill = {s}/>)}
+                <div className='skillsContainer'>
+                  {skills.map(s=><SkillCard key={s.id} skill={s} />)} 
+                </div>
                 <Footer/>
               </main>
             }/>
