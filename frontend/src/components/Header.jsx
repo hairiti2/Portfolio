@@ -6,7 +6,7 @@ export default function Header(){
             <div className='link'>
                 <Link to={`/`}>Home</Link>
                 <Link to={`/project`}>Projects</Link>
-                <Link to={`/skills`}>Skills</Link>
+                <Link to={`/skills`}>Compétences</Link>
             </div>
             
         </header>

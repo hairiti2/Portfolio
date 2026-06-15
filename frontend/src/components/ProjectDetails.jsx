@@ -90,6 +90,12 @@ export default function ProjectDetails({ project }) {
           </div>
         </div>
       )}
+      {project.bilan && (
+        <div className="blockDetail blockDetail--bilan">
+          <h3>Bilan &amp; réflexion</h3>
+          <p>{project.bilan}</p>
+        </div>
+      )}
     </div>
   );
 }

@@ -1,16 +1,15 @@
-import { useState } from 'react'
-import ProjectCard from './components/ProjectCard'; 
-import { Routes, Route } from 'react-router-dom';
+import { useState, useEffect } from 'react'
+import ProjectCard from './components/ProjectCard';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import './assets/style/App.css'
-import { useEffect } from 'react';
 import ProjectDetailsWrapper from './components/ProjectDetailsWrapper';
 import Header from './components/Header';
-import Footer from './components/Footer';
 import Home from './components/Home';
-import SkillCard from './components/SkillCard';
 import SideBar from './components/SideBar';
+import CompetencePage from './components/CompetencePage';
 
 function App() {
+  const location = useLocation();
   const [projects, setProjects] = useState([]);
   const [skills, setSkills] = useState([]);
   const [checkedSkills, setCheckedSkills] = useState({});
@@ -29,10 +28,21 @@ function App() {
   const activeCompetences = activeKeys.filter(k => COMPETENCES.includes(k));
   const activeSkills = activeKeys.filter(k => !YEARS.includes(k) && !TYPES.includes(k) && !COMPETENCES.includes(k));
 
+  useEffect(() => {
+    const { preselectSkill, preselectCompetence, preselectPeriods } = location.state ?? {};
+    if (!preselectSkill && !preselectCompetence && !preselectPeriods?.length) return;
+    const next = {};
+    if (preselectSkill) next[preselectSkill] = true;
+    else if (preselectCompetence) next[preselectCompetence] = true;
+    (preselectPeriods ?? []).forEach(p => { next[p] = true; });
+    setCheckedSkills(next);
+  }, [location.state]);
+
   const filteredProjects = projects.filter(p => {
     const skillMatch = activeSkills.length === 0 || activeSkills.some(s =>
       (p.languages || []).some(l => l.toLowerCase() === s.toLowerCase()) ||
-      (p.frameworks || []).some(f => f.toLowerCase() === s.toLowerCase())
+      (p.frameworks || []).some(f => f.toLowerCase() === s.toLowerCase()) ||
+      (p.tools || []).some(t => t.toLowerCase() === s.toLowerCase())
     );
     const yearMatch = activeYears.length === 0 || activeYears.includes(p.period?.label);
     const typeMatch = activeTypes.length === 0 || activeTypes.some(t => (p.type || []).includes(t));
@@ -57,48 +67,37 @@ function App() {
 
   return (
     <>
-        <Routes>
-          <Route path="/" element = {
-            <main className='container'>
-              <Header/>
-              <Home/>
-              <Footer/>
-            </main>
-          }/>
-          <Route path="/project/" element={
-            <main className="container">
-              <Header />
-              <div className="pageContent">
-                <h1>Mes projets et expériences professionnelles</h1>
-                <div className="projectPage">
-                  <SideBar skills={skills} checked={checkedSkills} onToggle={toggleSkill} />
-                  <div className="projectGrid">
-                    {filteredProjects.map(p => <ProjectCard key={p.id} project={p} />)}
-                  </div>
+      <Header />
+      <Routes>
+        <Route path="/" element={
+          <div className="container">
+            <Home />
+          </div>
+        }/>
+        <Route path="/project/" element={
+          <main className="container">
+            <div className="pageContent">
+              <h1>Mes projets et expériences professionnelles</h1>
+              <div className="projectPage">
+                <SideBar skills={skills} checked={checkedSkills} onToggle={toggleSkill} />
+                <div className="projectGrid">
+                  {filteredProjects.map(p => <ProjectCard key={p.id} project={p} />)}
                 </div>
               </div>
-              <Footer/>
-            </main>
-          }/>
-          <Route path="/project/:id" element={
-            <main className='container'>
-              {<Header/>}
-              <ProjectDetailsWrapper projects={projects}/>
-              {<Footer/>}
-            </main>
-            }/>
-            <Route path='/skills' element={
-              <main className='container'>
-                <Header/>
-                <h1>Mes Compétences</h1>
-                <div className='skillsContainer'>
-                  {skills.map(s=><SkillCard key={s.id} skill={s} />)} 
-                </div>
-                <Footer/>
-              </main>
-            }/>
-        </Routes>
-
+            </div>
+          </main>
+        }/>
+        <Route path="/project/:id" element={
+          <main className="container">
+            <ProjectDetailsWrapper projects={projects}/>
+          </main>
+        }/>
+        <Route path="/skills" element={
+          <main className="container">
+            <CompetencePage projects={projects} />
+          </main>
+        }/>
+      </Routes>
     </>
   )
 }
