@@ -1,6 +1,6 @@
 export default function SkillCard( {skill} ){
 
-    let skills = skill.skills.split(",") ;
+    let skills = skill.skills || [];
 
     return(
     <div className="skillCard">

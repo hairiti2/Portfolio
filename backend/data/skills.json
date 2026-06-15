@@ -1,9 +1,10 @@
-[   {
-    "category": "Développement web",
-    "skills" : "html/css, javascript, React, Node.js, Vue.js, Php"
-    },
-    {
-        "category":"Développement logiciel",
-        "skills": "Java, Python, C, Algorithmie, Structure de donnée,"
-    }
+[
+  {
+    "category": "Langages",
+    "skills": ["HTML/CSS", "JavaScript", "Python","C", "Java", "PHP", "DAX", "SQL"]
+  },
+  {
+    "category": "Frameworks",
+    "skills": ["React", "Node.js", "Symfony"]
+  }
 ]

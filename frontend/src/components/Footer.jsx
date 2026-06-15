@@ -7,7 +7,6 @@ export default function Footer(){
                 <Link to={`/`}>Home</Link>
                 <Link to={``}>Projects</Link>
                 <Link to={``}>Skills</Link>
-                <Link to={``}>Contact</Link> 
             </div>
         </footer>
     );
