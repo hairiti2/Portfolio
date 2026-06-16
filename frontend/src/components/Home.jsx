@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import StarCanvas from "./StarCanvas";
 
 const SOCIAL_LINKS = [
   {
@@ -36,12 +35,11 @@ const STACK = ["Python", "JavaScript", "SQL", "React", "Node.js"];
 export default function Home() {
   return (
     <div className="presentation">
-      <StarCanvas />
       <div className="heroContent">
 
         <span className="statusBadge">
           <span className="statusDot" />
-          En stage chez SNCF · Avr – Juill 2026
+          En stage chez e.SNCF Solutions · Avr – Juill 2026
         </span>
 
         <h1>Sacha Pitalot</h1>

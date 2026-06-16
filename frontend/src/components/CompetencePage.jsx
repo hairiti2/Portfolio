@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import AC_LABELS from '../data/acLabels';
 
 const COMPETENCES = [
   { id: 1, name: "Réaliser",    desc: "Développer une application informatique" },
@@ -27,8 +28,8 @@ function countBy(list, field, value) {
   return list.filter(p => (p[field] || []).includes(value)).length;
 }
 
-// Niveau 3 existe dans les données mais n'est pas encore maîtrisé (BUT3 non fait)
-const COMP_PCT = { 0: 0, 1: 33, 2: 66, 3: 80 };
+// Nombre total d'ACs par compétence dans le référentiel (niv 1+2+3)
+const TOTAL_ACS = { 1: 11, 2: 10, 3: 7, 4: 7, 5: 7, 6: 8 };
 
 const COMP_COLORS = {
   1: '#2563eb',
@@ -109,6 +110,20 @@ export default function CompetencePage({ projects }) {
     return { ...comp, related, acs, levels, maxLevel };
   });
 
+  // Total de projets utilisant chaque skill sur l'ensemble des périodes
+  const allLangCount = Object.fromEntries(
+    [...new Set(projects.flatMap(p => p.languages || []))].map(l => [l, countBy(projects, 'languages', l)])
+  );
+  const allFwCount = Object.fromEntries(
+    [...new Set(projects.flatMap(p => p.frameworks || []))].map(f => [f, countBy(projects, 'frameworks', f)])
+  );
+  const allToolCount = Object.fromEntries(
+    [...new Set(projects.flatMap(p => p.tools || []))].map(t => [t, countBy(projects, 'tools', t)])
+  );
+
+  const skillPct = (count, name, allCount) =>
+    count > 0 ? Math.round((count / Math.max(allCount[name] || 1, 1)) * (SKILL_PCT[name] ?? 25)) : 0;
+
   const sortByPct = (a, b) => (SKILL_PCT[b.name] ?? 25) - (SKILL_PCT[a.name] ?? 25);
 
   const langList = [...new Set(projects.flatMap(p => p.languages || []))]
@@ -177,21 +192,23 @@ export default function CompetencePage({ projects }) {
                   >
                     <div className="competenceHeader">
                       <div className="competenceHeaderTitle">
-                        <span className="compDot" style={{ background: color }} />
                         <div>
                           <h3>{comp.name}</h3>
                           <p className="competenceDesc">{comp.desc}</p>
                         </div>
                       </div>
-                      <span className="levelLabel" style={{ color }}>
-                        Niv. {comp.maxLevel || '—'}
-                      </span>
                     </div>
-                    <LevelBar pct={COMP_PCT[comp.maxLevel] ?? 0} colorVar={color} />
+                    <LevelBar pct={Math.min(Math.round((comp.acs.length / TOTAL_ACS[comp.id]) * 100), 95)} colorVar={color} />
                     {comp.acs.length > 0 ? (
                       <div className="acTags">
                         {comp.acs.map(ac => (
-                          <span key={ac} className={`tag-ac tag-ac--comp${ac[3]}`}>{ac}</span>
+                          <span
+                            key={ac}
+                            className={`tag-ac tag-ac--comp${ac[3]}`}
+                            title={AC_LABELS[ac] ? `${ac} – ${AC_LABELS[ac]}` : ac}
+                          >
+                            {ac}
+                          </span>
                         ))}
                       </div>
                     ) : (
@@ -227,7 +244,7 @@ export default function CompetencePage({ projects }) {
                       {count > 0 ? `${count} projet${count > 1 ? 's' : ''}` : '—'}
                     </span>
                   </div>
-                  <LevelBar pct={count > 0 ? (SKILL_PCT[name] ?? 25) : 0} colorVar="#2563eb" />
+                  <LevelBar pct={skillPct(count, name, allLangCount)} colorVar="#2563eb" />
                 </div>
               ))}
             </div>
@@ -252,7 +269,7 @@ export default function CompetencePage({ projects }) {
                       {count > 0 ? `${count} projet${count > 1 ? 's' : ''}` : '—'}
                     </span>
                   </div>
-                  <LevelBar pct={count > 0 ? (SKILL_PCT[name] ?? 25) : 0} colorVar="#15803d" />
+                  <LevelBar pct={skillPct(count, name, allFwCount)} colorVar="#15803d" />
                 </div>
               ))}
             </div>
@@ -277,7 +294,7 @@ export default function CompetencePage({ projects }) {
                       {count > 0 ? `${count} projet${count > 1 ? 's' : ''}` : '—'}
                     </span>
                   </div>
-                  <LevelBar pct={count > 0 ? (SKILL_PCT[name] ?? 25) : 0} colorVar="#c2410c" />
+                  <LevelBar pct={skillPct(count, name, allToolCount)} colorVar="#c2410c" />
                 </div>
               ))}
             </div>
