@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 const COMPETENCES = [
   { key: "Réaliser",     desc: "Développer une solution informatique" },
   { key: "Optimiser",    desc: "Algorithmique et structures de données" },
@@ -7,6 +9,19 @@ const COMPETENCES = [
   { key: "Collaborer",   desc: "Travail en équipe" },
 ];
 
+function FilterSection({ title, defaultOpen = true, children }) {
+  const [open, setOpen] = useState(defaultOpen);
+  return (
+    <div className="filterCategory">
+      <button className="filterCategoryToggle" onClick={() => setOpen(o => !o)}>
+        <h4>{title}</h4>
+        <span className={`filterChevron ${open ? 'filterChevron--open' : ''}`}>›</span>
+      </button>
+      {open && children}
+    </div>
+  );
+}
+
 export default function SideBar({ skills, checked, onToggle }) {
   return (
     <div className="sideBar">
@@ -14,46 +29,35 @@ export default function SideBar({ skills, checked, onToggle }) {
         <h2>Filtres</h2>
         <div className="filter">
 
-          <div className="filterCategory">
-            <h4>Compétences BUT</h4>
+          <FilterSection title="Compétences BUT" defaultOpen={true}>
             <ul>
               {COMPETENCES.map(({ key }) => (
                 <li key={key}>
                   <label>
-                    <input
-                      type="checkbox"
-                      checked={!!checked[key]}
-                      onChange={() => onToggle(key)}
-                    />
+                    <input type="checkbox" checked={!!checked[key]} onChange={() => onToggle(key)} />
                     {key}
                   </label>
                 </li>
               ))}
             </ul>
-          </div>
+          </FilterSection>
 
           {skills.map(category => (
-            <div key={category.category} className="filterCategory">
-              <h4>{category.category}</h4>
+            <FilterSection key={category.category} title={category.category} defaultOpen={false}>
               <ul>
                 {category.skills.map(skill => (
                   <li key={skill}>
                     <label>
-                      <input
-                        type="checkbox"
-                        checked={!!checked[skill]}
-                        onChange={() => onToggle(skill)}
-                      />
+                      <input type="checkbox" checked={!!checked[skill]} onChange={() => onToggle(skill)} />
                       {skill}
                     </label>
                   </li>
                 ))}
               </ul>
-            </div>
+            </FilterSection>
           ))}
 
-          <div className="filterCategory">
-            <h4>Année</h4>
+          <FilterSection title="Année" defaultOpen={true}>
             <ul>
               <li>
                 <label>
@@ -68,10 +72,9 @@ export default function SideBar({ skills, checked, onToggle }) {
                 </label>
               </li>
             </ul>
-          </div>
+          </FilterSection>
 
-          <div className="filterCategory">
-            <h4>Type de projet</h4>
+          <FilterSection title="Type de projet" defaultOpen={true}>
             <ul>
               {["Projet académique", "Projet personnel", "Expérience professionnelle"].map(t => (
                 <li key={t}>
@@ -82,7 +85,7 @@ export default function SideBar({ skills, checked, onToggle }) {
                 </li>
               ))}
             </ul>
-          </div>
+          </FilterSection>
 
         </div>
       </div>

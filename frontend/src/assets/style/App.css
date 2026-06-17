@@ -146,9 +146,9 @@ header h1 {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: #eff6ff;
-  border: 1px solid #bfdbfe;
-  color: #2563eb;
+  background: #f5f3ff;
+  border: 1px solid #ddd6fe;
+  color: #7c3aed;
   padding: 0.35rem 0.9rem;
   border-radius: 99px;
   font-size: 0.8rem;
@@ -252,7 +252,7 @@ header h1 {
   background: var(--accent-dark);
   border-color: var(--accent-dark);
   color: white;
-  box-shadow: 0 6px 18px rgba(59, 130, 246, 0.35);
+  box-shadow: 0 6px 18px rgba(124, 58, 237, 0.35);
 }
 
 .discoverLink {
@@ -265,7 +265,7 @@ header h1 {
   font-weight: 700;
   font-size: 0.95rem;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 18px rgba(59, 130, 246, 0.35);
+  box-shadow: 0 4px 18px rgba(124, 58, 237, 0.35);
 }
 
 .discoverLink:hover {
@@ -273,7 +273,7 @@ header h1 {
   border-color: var(--accent-dark);
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.5);
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.5);
 }
 
 /* ── Page content wrapper ────────────────────── */
@@ -338,7 +338,7 @@ header h1 {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--text-muted);
+  color: var(--text-primary);
   margin-bottom: 1.25rem;
 }
 
@@ -359,7 +359,38 @@ header h1 {
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.06em;
+  margin: 0;
+}
+
+.filterCategoryToggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0.25rem 0;
   margin-bottom: 0.5rem;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.filterCategoryToggle:hover {
+  background: none;
+  box-shadow: none;
+  transform: none;
+}
+
+.filterChevron {
+  font-size: 1rem;
+  color: var(--text-muted);
+  transform: rotate(90deg);
+  transition: transform 0.18s ease;
+  line-height: 1;
+}
+
+.filterChevron--open {
+  transform: rotate(270deg);
 }
 
 .filterCategory ul {
@@ -481,15 +512,21 @@ header h1 {
 }
 
 .tag-language {
-  background: #eff6ff;
-  color: #2563eb;
-  border: 1px solid #bfdbfe;
+  background: #f5f3ff;
+  color: #7c3aed;
+  border: 1px solid #ddd6fe;
 }
 
 .tag-framework {
   background: #f0fdf4;
   color: #16a34a;
   border: 1px solid #bbf7d0;
+}
+
+.tag-tool {
+  background: #fff7ed;
+  color: #c2410c;
+  border: 1px solid #fed7aa;
 }
 
 .projectLink {
@@ -622,12 +659,12 @@ header h1 {
 }
 
 /* Couleur par compétence (chiffre de la compétence dans le code AC) */
-.tag-ac--comp1 { background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; } /* Réaliser */
-.tag-ac--comp2 { background: #fdf4ff; color: #7e22ce; border: 1px solid #e9d5ff; } /* Optimiser */
-.tag-ac--comp3 { background: #fff7ed; color: #c2410c; border: 1px solid #fed7aa; } /* Administrer */
-.tag-ac--comp4 { background: #f0fdf4; color: #15803d; border: 1px solid #bbf7d0; } /* Gérer */
-.tag-ac--comp5 { background: #fefce8; color: #a16207; border: 1px solid #fde68a; } /* Conduire */
-.tag-ac--comp6 { background: #fff1f2; color: #be123c; border: 1px solid #fecdd3; } /* Collaborer */
+.tag-ac--comp1 { background: #eef2ff; color: #4338ca; border: 1px solid #c7d2fe; } /* Réaliser  – indigo  */
+.tag-ac--comp2 { background: #faf5ff; color: #7e22ce; border: 1px solid #e9d5ff; } /* Optimiser – violet  */
+.tag-ac--comp3 { background: #fff7ed; color: #c2410c; border: 1px solid #fed7aa; } /* Administrer – orange */
+.tag-ac--comp4 { background: #ecfdf5; color: #059669; border: 1px solid #a7f3d0; } /* Gérer     – emerald */
+.tag-ac--comp5 { background: #fefce8; color: #ca8a04; border: 1px solid #fde68a; } /* Conduire  – amber   */
+.tag-ac--comp6 { background: #fdf2f8; color: #be185d; border: 1px solid #fbcfe8; } /* Collaborer – rose   */
 
 /* ── Skills page (legacy) ────────────────────── */
 
@@ -664,9 +701,9 @@ header h1 {
 }
 
 .listSkill li {
-  background: #eff6ff;
-  border: 1px solid #bfdbfe;
-  color: #2563eb;
+  background: #f5f3ff;
+  border: 1px solid #ddd6fe;
+  color: #7c3aed;
   padding: 0.3rem 0.8rem;
   border-radius: 99px;
   font-size: 0.8em;
@@ -822,7 +859,7 @@ header h1 {
 .skillRelatedPill:hover {
   border-color: var(--accent);
   color: var(--accent);
-  background: #eff6ff;
+  background: #f5f3ff;
 }
 
 .skillCard--active {
@@ -934,7 +971,7 @@ header h1 {
 .projectPill:hover {
   border-color: var(--accent);
   color: var(--accent);
-  background: #eff6ff;
+  background: #f5f3ff;
 }
 
 /* ── CompetencePage – nouvelle mise en page ───── */
@@ -980,9 +1017,9 @@ header h1 {
 }
 
 .skillChip--lang {
-  background: #eff6ff;
-  color: #2563eb;
-  border-color: #bfdbfe;
+  background: #f5f3ff;
+  color: #7c3aed;
+  border-color: #ddd6fe;
 }
 
 .skillChip--fw {
@@ -1023,8 +1060,8 @@ header h1 {
   font-size: 0.73rem;
   font-weight: 600;
   color: var(--accent);
-  background: #eff6ff;
-  border: 1px solid #bfdbfe;
+  background: #f5f3ff;
+  border: 1px solid #ddd6fe;
   border-radius: 99px;
   padding: 0.2rem 0.7rem;
   cursor: pointer;

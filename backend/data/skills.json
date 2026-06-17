@@ -1,10 +1,14 @@
 [
   {
     "category": "Langages",
-    "skills": ["HTML/CSS", "JavaScript", "Python","C", "Java", "PHP", "DAX", "SQL"]
+    "skills": ["Python", "JavaScript", "SQL", "PHP", "HTML/CSS", "Java", "DAX", "Kotlin", "C", "M (PowerQuery)"]
   },
   {
     "category": "Frameworks",
-    "skills": ["React", "Node.js", "Symfony"]
+    "skills": ["PySpark", "Node.js", "React", "Symfony", "PyGame", "Firebase", "Swing"]
+  },
+  {
+    "category": "Outils",
+    "skills": ["Databricks", "PowerBI", "Git", "Docker", "Raspberry Pi OS"]
   }
 ]

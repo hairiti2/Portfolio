@@ -26,6 +26,9 @@ export default function ProjectCard({ project }){
                     {(project.frameworks || []).map(f => (
                         <span key={f} className="tag tag-framework">{f}</span>
                     ))}
+                    {(project.tools || []).map(t => (
+                        <span key={t} className="tag tag-tool">{t}</span>
+                    ))}
                 </div>
                 {project.link && (
                     <a href={project.link} target="_blank" rel="noreferrer" className="projectLink">

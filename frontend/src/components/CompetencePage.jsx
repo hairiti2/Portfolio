@@ -32,12 +32,12 @@ function countBy(list, field, value) {
 const TOTAL_ACS = { 1: 11, 2: 10, 3: 7, 4: 7, 5: 7, 6: 8 };
 
 const COMP_COLORS = {
-  1: '#2563eb',
-  2: '#7e22ce',
-  3: '#c2410c',
-  4: '#15803d',
-  5: '#a16207',
-  6: '#be123c',
+  1: '#6366f1',
+  2: '#a855f7',
+  3: '#f97316',
+  4: '#10b981',
+  5: '#eab308',
+  6: '#ec4899',
 };
 
 // Niveaux manuels (%) pour chaque techno
@@ -240,11 +240,11 @@ export default function CompetencePage({ projects }) {
                 >
                   <div className="competenceHeader">
                     <h3>{name}</h3>
-                    <span className="levelLabel" style={{ color: '#2563eb' }}>
+                    <span className="levelLabel" style={{ color: '#7c3aed' }}>
                       {count > 0 ? `${count} projet${count > 1 ? 's' : ''}` : '—'}
                     </span>
                   </div>
-                  <LevelBar pct={skillPct(count, name, allLangCount)} colorVar="#2563eb" />
+                  <LevelBar pct={skillPct(count, name, allLangCount)} colorVar="#7c3aed" />
                 </div>
               ))}
             </div>
@@ -265,11 +265,11 @@ export default function CompetencePage({ projects }) {
                 >
                   <div className="competenceHeader">
                     <h3>{name}</h3>
-                    <span className="levelLabel" style={{ color: '#15803d' }}>
+                    <span className="levelLabel" style={{ color: '#10b981' }}>
                       {count > 0 ? `${count} projet${count > 1 ? 's' : ''}` : '—'}
                     </span>
                   </div>
-                  <LevelBar pct={skillPct(count, name, allFwCount)} colorVar="#15803d" />
+                  <LevelBar pct={skillPct(count, name, allFwCount)} colorVar="#10b981" />
                 </div>
               ))}
             </div>
@@ -290,11 +290,11 @@ export default function CompetencePage({ projects }) {
                 >
                   <div className="competenceHeader">
                     <h3>{name}</h3>
-                    <span className="levelLabel" style={{ color: '#c2410c' }}>
+                    <span className="levelLabel" style={{ color: '#f97316' }}>
                       {count > 0 ? `${count} projet${count > 1 ? 's' : ''}` : '—'}
                     </span>
                   </div>
-                  <LevelBar pct={skillPct(count, name, allToolCount)} colorVar="#c2410c" />
+                  <LevelBar pct={skillPct(count, name, allToolCount)} colorVar="#f97316" />
                 </div>
               ))}
             </div>
