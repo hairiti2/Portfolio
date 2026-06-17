@@ -48,7 +48,7 @@ const SKILL_PCT = {
   'SQL':             72,
   'PHP':             50,
   'HTML/CSS':        60,
-  'Java':            50,
+  'Java':            60,
   'DAX':             60,
   'Kotlin':          28,
   'C':               40,
@@ -64,7 +64,7 @@ const SKILL_PCT = {
   // Outils
   'Databricks':      70,
   'PowerBI':         70,
-  'Git':             60,
+  'Git':             80,
   'Docker':          33,
   'Raspberry Pi OS': 18,
 };
