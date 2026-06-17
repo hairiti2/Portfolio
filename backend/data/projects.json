@@ -30,7 +30,7 @@
             "AC16.04"
         ],
         "tools": ["Git"],
-        "bilan": "Ce projet m'a permis de consolider mes bases en programmation orientée objet et de découvrir la modélisation par graphes. L'implémentation du 2-opt a été la partie la plus exigeante : comprendre pourquoi un algorithme glouton ne suffit pas et devoir raisonner sur la complexité m'a vraiment fait progresser sur la compétence Optimiser. Je retiendrais qu'il aurait fallu davantage tester chaque algorithme indépendamment avant de les comparer.",
+        "bilan": "Ce projet m'a permis de consolider mes bases en programmation orientée objet et de découvrir la modélisation par graphes. L'implémentation du 2-opt a été la partie la plus exigeante : comprendre pourquoi un algorithme glouton ne suffit pas et devoir raisonner sur la complexité m'a vraiment fait progresser sur la compétence Optimiser. Je retiendrais qu'il aurait fallu davantage tester chaque algorithme indépendamment avant de les comparer et que l'organisation du code, de l'architecture de l'application est un point central pour pouvoir développer efficacement.",
         "languages": [
             "Java"
         ],
@@ -119,7 +119,7 @@
             "AC16.04"
         ],
         "tools": ["Docker", "Git"],
-        "bilan": "BeatFriends est le projet dont je suis le plus fier de ma formation. Avoir porté la quasi-totalité du développement m'a obligé à prendre des décisions d'architecture seul et à assumer leurs conséquences. La mise en place du WebSocket a été le défi technique le plus marquant. Ce que je ferais différemment : mieux documenter le code dès le départ et mettre en place des tests, car la maintenance est devenue complexe au fur et à mesure que le projet grossissait.",
+        "bilan": "BeatFriends est le projet dont je suis le plus fier de ma formation. Avoir porté la quasi-totalité du développement m'a obligé à prendre des décisions d'architecture seul et à assumer leurs conséquences. La mise en place du WebSocket a été le défi technique le plus marquant. Ce que je ferais différemment : mieux documenter le code dès le départ et mettre en place des tests, car la maintenance est devenue complexe au fur et à mesure que le projet grossissait. Ce p^rojet a été l'occasion de configurer mon VPS et d'en tirer de nombreuses compétences",
         "languages": [
             "PHP",
             "HTML/CSS",
@@ -162,7 +162,7 @@
             "AC15.01",
             "AC25.02"
         ],
-        "bilan": "Ce projet m'a appris ce que signifie vraiment gérer un projet en autonomie : comprendre un besoin réel, choisir une stack adaptée et avancer sans filet. Découvrir React et Node.js ensemble a été dense mais formateur. L'algorithme de récurrence est encore imparfait — c'est un axe d'amélioration clair. Ce projet m'a surtout confirmé que je suis capable de mener un développement full-stack de bout en bout.",
+        "bilan": "Ce projet m'a appris ce que signifie vraiment gérer un projet en autonomie : comprendre un besoin réel, choisir une stack adaptée et avancer sans filet. Découvrir React et Node.js ensemble a été dense mais formateur. L'algorithme de récurrence a été implémenté avec succès via une bibliothèques (FullCalendar) adaptée. Ce projet m'a surtout confirmé que je suis capable de mener un développement full-stack de bout en bout.",
         "languages": [
             "HTML/CSS",
             "JavaScript",
@@ -202,7 +202,7 @@
             "AC16.04"
         ],
         "tools": ["PowerBI"],
-        "bilan": "Ce rapport a été ma première approche de la visualisation de données et de la notion de besoin utilisateur dans un contexte décisionnel. J'ai réalisé qu'un bon visuel ne suffit pas — il faut d'abord comprendre ce que le décideur cherche à piloter. C'est cette compétence d'écoute et d'analyse du besoin que j'ai ensuite approfondie lors de mon stage à la SNCF.",
+        "bilan": "Ce rapport a été ma première approche de la visualisation de données et de la notion de besoin utilisateur dans un contexte décisionnel. J'ai réalisé qu'un bon visuel ne suffit pas, il faut d'abord comprendre ce que le décideur cherche à piloter. C'est cette compétence d'écoute et d'analyse du besoin que j'ai ensuite approfondie lors de mon stage à la SNCF.",
         "languages": [
             "M (PowerQuery)"
         ],
@@ -331,7 +331,7 @@
             "AC16.04"
         ],
         "tools": ["Raspberry Pi OS"],
-        "bilan": "Ce projet m'a fait découvrir la programmation embarquée et la contrainte du matériel réel. Calibrer les valeurs du gyroscope pour que la voiture soit agréable à conduire m'a appris qu'un bon algorithme ne suffit pas — l'expérience utilisateur dépend aussi de paramètres physiques qu'on ne maîtrise pas complètement. Travailler en équipe sur un projet créatif a aussi été une expérience enrichissante.",
+        "bilan": "Ce projet m'a fait découvrir la programmation embarquée et la contrainte du matériel réel. Calibrer les valeurs du gyroscope pour que la voiture soit agréable à conduire m'a appris qu'un bon algorithme ne suffit pas, l'expérience utilisateur dépend aussi de paramètres physiques qu'on ne maîtrise pas complètement. Travailler en équipe sur un projet créatif a aussi été une expérience enrichissante.",
         "languages": [
             "Python"
         ],
@@ -372,7 +372,7 @@
             
         ],
         "tools": ["Git"],
-        "bilan": "Symfony m'a confronté pour la première fois à un framework avec des conventions fortes. L'apprentissage a été abrupt — comprendre l'injection de dépendances, les entités Doctrine et le système de Voter n'est pas immédiat. Mais une fois ces concepts intégrés, j'ai réalisé le gain de productivité et de fiabilité qu'un framework apporte par rapport au PHP vanilla que j'avais pratiqué sur BeatFriends.",
+        "bilan": "Symfony m'a confronté pour la première fois à un framework avec des conventions fortes. L'apprentissage a été abrupt comprendre l'injection de dépendances, les entités Doctrine et le système de Voter n'est pas immédiat. Mais une fois ces concepts intégrés, j'ai réalisé le gain de productivité et de fiabilité qu'un framework apporte par rapport au PHP vanilla que j'avais pratiqué sur BeatFriends.",
         "languages": [
             "PHP"
         ],
@@ -414,7 +414,7 @@
             "AC26.03"
         ],
         "tools": ["Git"],
-        "bilan": "Ce blog a été mon premier projet PHP complet avec authentification et base de données. Il m'a permis de comprendre les mécanismes fondamentaux du web côté serveur — sessions, upload de fichiers, sécurité des formulaires. Avec le recul, certaines parties du code manquent de structure, ce qui m'a motivé à apprendre Symfony juste après pour travailler de façon plus rigoureuse.",
+        "bilan": "Ce blog a été mon premier projet PHP complet avec authentification et base de données. Il m'a permis de comprendre les mécanismes fondamentaux du web côté serveur tel que les sessions, l'upload de fichiers, la sécurité des formulaires. Avec le recul, certaines parties du code manquent de structure, ce qui m'a motivé à apprendre Symfony juste après pour travailler de façon plus rigoureuse.",
         "languages": [
             "PHP",
             "HTML/CSS",
@@ -453,7 +453,7 @@
             "AC32.03",
             "AC26.03"
         ],
-        "bilan": "Développer une application mobile a été un changement de paradigme complet — cycles de vie des activités, gestion asynchrone des appels API, contraintes d'affichage sur petits écrans. Kotlin m'a plu pour sa concision. Firebase a simplifié l'authentification mais a aussi introduit une dépendance externe que je n'aurais pas choisie sur un projet plus critique. Ce projet m'a confirmé mon intérêt pour le développement d'interfaces utilisateurs soignées.",
+        "bilan": "Développer une application mobile a été un changement de paradigme complet entre cycles de vie des activités, gestion asynchrone des appels API, contraintes d'affichage sur petits écrans. Kotlin m'a plu pour sa concision. Firebase a simplifié l'authentification mais a aussi introduit une dépendance externe que je n'aurais pas choisie sur un projet plus critique. Ce projet m'a confirmé mon intérêt pour le développement d'interfaces utilisateurs soignées.",
         "languages": [
             "Kotlin"
         ],
@@ -493,7 +493,7 @@
             "AC23.02",
             "AC25.02"
         ],
-        "bilan": "Ce portfolio est le projet qui synthétise le mieux ma progression : il mobilise React, une API REST, la gestion du CORS, le routage et un système de filtres que j'aurais été incapable de concevoir en début de BUT. Il m'a aussi appris à penser l'architecture d'une application avant de coder. L'axe d'amélioration principal est l'hébergement, que je prévois de mettre en place prochainement.",
+        "bilan": "Ce portfolio est le projet qui synthétise le mieux ma progression : il mobilise React, une API REST, la gestion du CORS, le routage et un système de filtres que j'aurais été incapable de concevoir en début de BUT. Il m'a aussi appris à penser l'architecture d'une application avant de coder. J'ai aussi continuer à me perfectionner dans le déploiement d'applications car ce projet est sur le VPS que j'ai configuré.",
         "languages": [
             "HTML/CSS",
             "JavaScript"
