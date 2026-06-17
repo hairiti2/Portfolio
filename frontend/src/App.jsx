@@ -54,12 +54,12 @@ function App() {
   });
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/projects")
+    fetch("https://sachapitalot.dev/api/projects")
       .then(res => res.json())
       .then(dataProj => setProjects(dataProj))
       .catch(err => console.log("Erreur:", err));
 
-    fetch("http://localhost:5000/api/skills")
+    fetch("https://sachapitalot.dev/api/skills")
       .then(res => res.json())
       .then(dataSkill => setSkills(dataSkill))
       .catch(err=>console.log("Erreur", err));
